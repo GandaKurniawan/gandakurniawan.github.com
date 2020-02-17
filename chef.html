@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="chef.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <title>Cheff</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+	<h1 class="judul">KITCHEN DINNER</h1>
+	<button class="tombol">MENU</button>
+	<nav class="menu">
+	<h4>CHEFF</h4>
+    <ul>
+		<li><a class="tablinks" onclick="bukamenu(event, 'home')">DASHBOARD</a></li>
+		<li><a class="tablinks" onclick="bukamenu(event, 'menu')">MENU</a></li>
+		<li><a class="tablinks" onclick="bukamenu(event, 'event')">EVENT</a></li>
+    <li><a href="index1.html"class="tablinks" onclick="bukamenu(event, 'website')">WEBSITE</a></li>
+    <li><a href="index.html" class="tablinks" onclick="bukamenu(event, 'logout')">LOGOUT</a></li>
+	  </ul>
+  </nav>
+</header>
+<div id="home" class="tabcontent">
+    <div class=" tabcontent1">
+      <table>
+        <thead>
+          <h1 class="admin">MANAGER</h1>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Telepon</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Niki</td>
+            <td>nikipradani</td>
+            <td>Nikicantik</td>
+            <td>087850470220</td>
+          </tr>
+        </tbody>
+        <center><table id="tabel" border="1">
+          <thead>
+          <tr>
+            <h1 class="admin">PEGAWAI</h1>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Telepon</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table></center>
+        <center><button type="button" id="button">Dapatkan Data</button></center>
+      </table>
+    </div>
+</div>
+<div id="menu" class="tabcontent"style="display:none;">
+  <div class="tabcontent1">
+      <table >
+        <thead>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Keterangan</th>
+          <th>Gambar</th>
+          <th>Aksi</th>
+        </thead>
+        <tbody>
+            <tr>
+              <td>1</td>
+              <td>Rendang</td>
+              <td>Makanan</td>
+              <td>Rendang.jpeg</td>
+              <td>
+                <button id="myBtn" type="button" class="ubah" name="button">Ubah</button>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1 class="judulmodal">KITCHEN DINNER</h1>
+                    <div class="box">
+                      <input type="text" name="Nama Menu" placeholder="Nama Menu" minlenght="6"  required >
+                      <textarea name="name" rows="8" cols="80" class="ketikpesan" placeholder="Keterangan" required></textarea>
+                      <input type="file" id="myFile" multiple size="50" placeholder="Masukkan Gambar"onchange="myFunction()">
+                      <p id="hasil"></p>
+                      <button class="btn" type="submit" name="button" onclick="return IsEmpty();">UBAH</button>
+                  </div>
+                  </div>
+                </div>
+                <button type="button" class="hapus" name="button">Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Gulai</td>
+              <td>Makanan</td>
+              <td>Gulai.jpeg</td>
+              <td>
+                <button type="button" class="ubah" name="button">Ubah</button>
+                <button type="button" class="hapus" name="button">Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Bakso</td>
+              <td>Makanan</td>
+              <td>Bakso.jpeg</td>
+              <td>
+                <button type="button" class="ubah" name="button">Ubah</button>
+                <button type="button" class="hapus" name="button">Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Es Campur</td>
+              <td>Minuman</td>
+              <td>EsCampur.jpeg</td>
+              <td>
+                <button type="button" class="ubah" name="button">Ubah</button>
+                <button type="button" class="hapus" name="button">Hapus</button>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Ayam Bakar</td>
+              <td>Makanan</td>
+              <td>AyamBakar.jpeg</td>
+              <td>
+                <button type="button" class="ubah" name="button">Ubah</button>
+                <button type="button" class="hapus" name="button">Hapus</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      <button id="myBtn2" type="button" class="tambah"  name="button">Tambah</button>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1 class="judulmodal">KITCHEN DINNER</h1>
+          <div class="box">
+            <input type="text" name="Nama Menu" placeholder="Nama Menu" minlenght="6"  required >
+            <textarea name="name" rows="8" cols="80" class="ketikpesan" placeholder="Keterangan" required></textarea>
+            <input type="file" id="myFile" multiple size="50" placeholder="Masukkan Gambar"onchange="myFunction()">
+            <p id="hasil"></p>
+            <button class="btn" type="submit" name="button" onclick="return IsEmpty();">KIRIM</button>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div id="event" class="tabcontent" style="display:none;">
+  <div class="tabcontent1">
+    <table >
+      <thead>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Keterangan</th>
+        <th>Gambar</th>
+        <th>Aksi</th>
+      </thead>
+      <tbody>
+          <tr>
+            <td>1</td>
+            <td>Lomba Memasak</td>
+            <td>7 Desember 2019</td>
+            <td>Lomba.jpeg</td>
+            <td>
+              <button id="myBtn"  type="button" class="ubah" name="button">Ubah</button>
+              <button type="button" class="hapus" name="button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Seminar Memasak</td>
+            <td>17 Desember 2019</td>
+            <td>Seminar.jpeg</td>
+            <td>
+              <button type="button" class="ubah" name="button">Ubah</button>
+              <button type="button" class="hapus" name="button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Workshop Memasak</td>
+            <td>25 Desember 2019</td>
+            <td>Workshop.jpeg</td>
+            <td>
+              <button id="myBtn" type="button" class="ubah" name="button">Ubah</button>
+              <button type="button" class="hapus" name="button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Festival Memasak</td>
+            <td>1 Januari 2020</td>
+            <td>Festival.jpeg</td>
+            <td>
+              <button type="button" class="ubah" name="button">Ubah</button>
+              <button type="button" class="hapus" name="button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Bazar Makanan</td>
+            <td>5 Januari 2020</td>
+            <td>Bazar.jpeg</td>
+            <td>
+              <button type="button" class="ubah" name="button">Ubah</button>
+              <button type="button" class="hapus" name="button">Hapus</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <button type="button" class="tambah"  name="button">Tambah</button>
+  </div>
+</div>
+
+<!-- slide -->
+<script type="text/javascript">
+  $(document).ready(function(){
+	$('.tombol').click(function(){
+		$('.menu').toggleClass("slide-menu-tampil");
+	});
+});
+</script>
+
+<!-- tabs -->
+<script type="text/javascript">
+function bukamenu(evt, namamenu) {
+// Declare all variables
+var i, tabcontent, tablinks;
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+  tabcontent[i].style.display = "none";
+}
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+  tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+// Show the current tab, and add an "active" class to the link that opened the tab
+document.getElementById(namamenu).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+<!-- modal -->
+<!-- <div id="bg" class="">
+</div>
+<div id="modal-kotak" class="container">
+  <div id="atas" class="">
+    <form action="index.html" method="post">
+      <img src="event" alt="">
+      <input type="text" name="" value="">
+      <input type="text" name="" value="">
+      <input type="text" name="" value="">
+      <div id="bawah" class="">
+          <button id="tombol-tutup" type="button" name="button">close</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<!-- <script type="text/javascript">
+		// $(document).ready(function(){
+		// 	$('#tombol').click(function(){
+		// 		$('#modal-kotak , #bg').fadeIn("slow");
+		// 	});
+		// 	$('#tombol-tutup').click(function(){
+		// 		$('#modal-kotak , #bg').fadeOut("slow");
+		// 	});
+		// });
+	</script> -->
+
+<!-- Ajax -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://my-json-server.typicode.com/GandaKurniawan/pweb/DataUser"></script>
+<script type="text/javascript">
+
+$('#button').click(function(){
+  ambilData();
+})
+
+function ambilData(){
+  $.ajax({
+    url:'https://apitest.miqdad.codes/data  ',
+    // url:'https://my-json-server.typicode.com/GandaKurniawan/pweb/DataUser',
+    success: function(response){
+      for(var i=0; i < response.count;i++){
+        console.log(response.result[i]);
+        $('#tabel').find('tbody')
+          .append($('<tr>')
+           .append($('<td>').text(i+1))
+            .append($('<td>').text(response.result[i].Nama))
+            .append($('<td>').text(response.result[i].Nim))
+          )
+      }
+    }
+  });
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<!-- choose file -->
+<!-- <script>
+    function myFunction(){
+      var x = document.getElementById("myFile");
+      var txt = "";
+      if ('files' in x) {
+        if (x.files.length == 0) {
+          txt = "Select one or more files.";
+        } else {
+          for (var i = 0; i < x.files.length; i++) {
+            var file = x.files[i];
+            var output = file.name.split('.');
+            if(output[1] === "pdf"){
+                txt += '<img src="pdf.jpg" alt="Smiley face" height="42" width="42"><br>';
+            }else if(output[1] === "docx" || output[1]==="doc"){
+                txt += '<img src="doc.png" alt="Smiley face" height="42" width="42"><br>';
+            }else if(output[1] === "css"){
+                txt += '<img src="css.png" alt="Smiley face" height="42" width="42"><br>';
+            }else if(output[1] === "html"){
+                txt += '<img src="html.png" alt="Smiley face" height="42" width="42"><br>';
+            }
+            if ('name' in file) {
+              txt +=  file.name + "<br>";
+            }
+            if ('size' in file) {
+              txt +=  file.size + " bytes <br>";
+            }
+          }
+        }
+      }
+      else {
+        if (x.value == "") {
+          txt += "Select one or more files.";
+        } else {
+          txt += "The files property is not supported by your browser!";
+          txt  += "<br>The path of the selected file: " + x.value;
+        }
+      }
+      document.getElementById("hasil").innerHTML = txt;
+    }
+    </script> -->
+</body>
+</html>

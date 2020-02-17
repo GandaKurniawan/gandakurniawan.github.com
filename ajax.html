@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		#tabel{
+			width: 50%;
+			border: 1px solid #94b8b8;
+		}
+		tr:nth-child(odd){
+		background-color: #e0e0e0;
+		}
+		#button{
+			height: 20px;
+			border-radius: 5px;
+			background-color: #ff4dff;
+		}
+		#tabel thead tr{
+			background: #ff4dff;
+			font-family: Poppins;
+		}
+		#tabel tbody tr {
+		    letter-spacing: 1px;
+		}
+		h3{
+			font-family: Poppins;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<center><h3>Tugas Ajax</h3></center>
+	<center><table id="tabel" border="1">
+		<thead>
+		<tr>
+			<th>No</th>
+			<th>Nim</th>
+			<th>Nama</th>
+			<th>Jurusan</th>
+		</tr>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table></center>
+	<center><button type="button" id="button">Dapatkan Data</button></center>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+
+	$('#button').click(function(){
+		ambilData();
+	})
+
+	function ambilData(){
+		$.ajax({
+			url:'https://apitest.miqdad.codes/data',
+			success: function(response){
+				for(var i=0; i < response.count;i++){
+					console.log(response.result[i]);
+					$('#tabel').find('tbody')
+					  .append($('<tr>')
+					   .append($('<td>').text(i+1))
+					    .append($('<td>').text(response.result[i].Nama))
+					    .append($('<td>').text(response.result[i].Nim))
+					    .append($('<td>').text(response.result[i].Jurusan))
+					  )
+				}
+			}
+		});
+
+
+	}
+	</script>
+</body>
+</html>

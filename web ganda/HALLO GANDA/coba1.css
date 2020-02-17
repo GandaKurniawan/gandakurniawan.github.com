@@ -1,0 +1,35 @@
+.mau{
+	background-color: grey;
+}
+.TIPS .isi .nganu{
+	
+	background-color: grey;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	text-align: center;
+	display: inline-block;
+	color: white;
+	width: 35%;
+  	display: inline-block;
+  	margin: 6%;
+  	padding-left: 2%;
+}
+.TIPS .isi1 .ngano{
+	background-color: grey;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	text-align: center;
+	display: inline-block;
+	color: white;
+	width: 35%;
+  	display: inline-block;
+  	margin: 6%;
+  	padding-left: 2%;
+}
+.TIPS{
+	background-color: black;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
